@@ -1,49 +1,24 @@
 package com.priyo.app;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import androidx.activity.ComponentActivity;
-import androidx.webkit.WebViewAssetLoader;
+import android.webkit.WebViewClient;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends ComponentActivity {
+public class MainActivity extends AppCompatActivity {
     private WebView webView;
 
-    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         webView = new WebView(this);
-        WebSettings s = webView.getSettings();
-        s.setJavaScriptEnabled(true);
-        s.setDomStorageEnabled(true);
-        s.setDatabaseEnabled(true);
-        s.setAllowFileAccess(false);
-        s.setAllowContentAccess(false);
-        s.setMediaPlaybackRequiresUserGesture(false);
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
 
-        WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
-                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
-                .build();
+        webView.loadUrl("https://priyoapp.pages.dev");
 
-        webView.setWebViewClient(new android.webkit.WebViewClient() {
-            @Override
-            public android.webkit.WebResourceResponse shouldInterceptRequest(
-                    WebView view, android.webkit.WebResourceRequest request) {
-                return loader.shouldInterceptRequest(request.getUrl());
-            }
-        });
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("https://appassets.androidplatform.net/assets/index.html");
         setContentView(webView);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
     }
 }
