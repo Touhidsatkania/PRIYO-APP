@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setVerticalScrollBarEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
 
-        webView.loadUrl("https://priyoapp.pages.dev");
+        webView.loadUrl("https://priyoapp.pages.dev/");
 
         setContentView(webView);
 
