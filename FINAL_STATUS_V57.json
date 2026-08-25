@@ -1,0 +1,17 @@
+{
+  "version": "V-57",
+  "status": "HOME DESIGN INTEGRATED",
+  "master_reference": "PRIYO APP final user-supplied dashboard image",
+  "changes": [
+    "Final two-card top ad layout",
+    "Welcome banner retained",
+    "Priyo Feed replaces Schedule",
+    "Online Shopping highlighted",
+    "Gallery contains Photo/Reel/Video/Music",
+    "Social Media, Earn & Reward, Share, More Apps",
+    "Chat moved into More Apps and right menu",
+    "Profile removed from side menu",
+    "Security banner removed from Home",
+    "Responsive mobile/desktop layout"
+  ]
+}

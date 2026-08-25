@@ -1,0 +1,14 @@
+{
+  "project":"PRIYO APP",
+  "version":"V-55",
+  "status":"Home UI + login gate update prepared",
+  "master_design":"app/src/main/assets/PRIYO_APP_HOME_FINAL_UI_REFERENCE_V37.png",
+  "android_application_id":"com.priyo.app",
+  "build":"GitHub Actions workflow included",
+  "build_task":":app:assembleDebug",
+  "java":"17",
+  "android_platform":"35",
+  "previous_versions_preserved":true,
+  "changes":["Rebuilt Home UI to follow approved V37 reference layout","Added fixed no-zoom/no-scroll mobile layout","Added first-entry login gate with automatic PRIYO ID/profile creation","Kept admin UI isolated from normal users"],
+  "deployment_gate":"Build #38 then install/runtime test before release/deploy"
+}

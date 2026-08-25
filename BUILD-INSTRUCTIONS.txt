@@ -1,0 +1,7 @@
+Cloud build target:
+1. Upload this ZIP as an Android/Gradle project.
+2. Run a Gradle Android build using JDK 17.
+3. Build task: :app:assembleDebug for test APK.
+4. After device testing, use :app:assembleRelease for release APK.
+5. Verify package/applicationId is com.priyo.app.
+6. Do not deploy until install and runtime tests pass.

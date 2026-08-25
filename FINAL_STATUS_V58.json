@@ -1,0 +1,15 @@
+{
+  "version": "V-58",
+  "status": "RESPONSIVE HOME POLISH",
+  "master_reference": "PRIYO APP final user-supplied dashboard image",
+  "changes": [
+    "Restored final reference artwork for top ads and welcome banner",
+    "Restored four live card artwork assets",
+    "Enabled vertical scrolling for the Home content instead of clipping",
+    "Kept the same two-card advertisement structure across viewport sizes",
+    "Responsive desktop sizing while preserving the mobile design language",
+    "Kept right three-dot menu free of profile UI",
+    "Bumped Android app version to 1.0.58 / versionCode 58"
+  ],
+  "apk_build": "not available in current environment"
+}

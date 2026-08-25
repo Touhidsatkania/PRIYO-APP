@@ -1,0 +1,2 @@
+573c542426c304296bae0549690712821835683c48968c52649bfb542ecf9c29  /mnt/data/priyo_final_work/app/src/main/assets/index.html
+df6880280cf60a990bb0d745cfea9a2fb4c68e97a1180bf10e907876d0944dd8  /mnt/data/priyo_final_work/app/build.gradle
