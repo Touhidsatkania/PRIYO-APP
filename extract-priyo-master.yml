@@ -1,0 +1,36 @@
+name: Extract PRIYO APP Master
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "PRIYO_APP_V63_CONSOLIDATED_MASTER.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract master project
+        run: |
+          unzip -o PRIYO_APP_V63_CONSOLIDATED_MASTER.zip -d ./
+          rm -f PRIYO_APP_V63_CONSOLIDATED_MASTER.zip
+
+      - name: Commit extracted project
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Extract PRIYO APP V63 master project"
+            git push
+          fi
