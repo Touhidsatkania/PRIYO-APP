@@ -20,7 +20,7 @@ jobs:
 
       - name: Extract master project
         run: |
-          unzip -o PRIYO_APP_V63_CONSOLIDATED_MASTER.zip -d ./
+          unzip -o PRIYO_APP_V63_CONSOLIDATED_MASTER.zip -d ./ -x ".github/workflows/*"
           rm -f PRIYO_APP_V63_CONSOLIDATED_MASTER.zip
 
       - name: Commit extracted project
