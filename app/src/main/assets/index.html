@@ -1,73 +1,837 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#f5f9ff">
+<meta name="theme-color" content="#0b141d">
 <title>PRIYO APP</title>
 
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
 html,body{
- margin:0;width:100%;height:100%;overflow:hidden;
- font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;
- background:#edf4ff;color:#17191d
+margin:0;
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;
+background:#eef3f8;
+color:#17212b
 }
-button{font:inherit;cursor:pointer}
+
+button{
+font:inherit;
+cursor:pointer;
+border:0
+}
+
 .app{
- width:100%;height:100dvh;max-width:520px;margin:auto;
- display:flex;flex-direction:column;
- background:linear-gradient(#f8fbff,#edf5ff)
+width:100%;
+height:100vh;
+max-width:520px;
+margin:auto;
+display:flex;
+flex-direction:column;
+background:#f7f9fc;
+overflow:hidden
 }
 
 /* HEADER */
 header{
- height:60px;flex:0 0 60px;padding:8px 12px;
- display:flex;align-items:center;justify-content:space-between;
- background:#fff;border-bottom:1px solid #e4eaf2
+height:58px;
+flex:0 0 58px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:7px 12px;
+background:#fff;
+border-bottom:1px solid #e4eaf2
 }
-.circle{
- width:42px;height:42px;border-radius:50%;
- border:1px solid #dfe6ef;background:#fff;font-size:21px
+
+.brand{
+display:flex;
+align-items:center;
+gap:9px
 }
+
 .logo{
- font-size:25px;font-weight:950;
- background:linear-gradient(90deg,#1956ed,#d021a0);
- -webkit-background-clip:text;color:transparent
+width:42px;
+height:42px;
+border-radius:50%;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,#1956ed,#8b35ff,#ed3f91);
+color:#fff;
+font-size:18px;
+font-weight:900;
+box-shadow:0 4px 12px #1956ed35
 }
-.head-right{display:flex;gap:6px}
+
+.brand-name{
+font-size:21px;
+font-weight:950;
+letter-spacing:.2px;
+background:linear-gradient(90deg,#1956ed,#9b35ff,#ed3f91);
+-webkit-background-clip:text;
+color:transparent
+}
+
+.header-actions{
+display:flex;
+gap:7px
+}
+
+.hbtn{
+width:38px;
+height:38px;
+border-radius:12px;
+background:#f0f4f9;
+color:#17212b;
+font-size:19px;
+display:grid;
+place-items:center
+}
 
 /* MAIN */
-main{flex:1;min-height:0;overflow:hidden;padding:8px 10px}
-.home{height:100%;display:flex;flex-direction:column;gap:6px}
+main{
+flex:1;
+min-height:0;
+overflow-y:auto;
+padding:8px 10px 80px
+}
+
+main::-webkit-scrollbar{display:none}
 
 /* ADS */
 .ads{
- height:74px;flex:0 0 74px;
- display:flex;gap:8px;overflow:hidden
+height:74px;
+display:flex;
+gap:8px;
+overflow:hidden;
+margin-bottom:6px
 }
+
 .ad{
- min-width:82%;height:74px;border:0;border-radius:17px;
- background-size:cover;background-position:center;
- box-shadow:0 5px 15px #24508018
+min-width:82%;
+height:74px;
+border-radius:17px;
+background-size:cover;
+background-position:center;
+box-shadow:0 5px 15px #24508018
 }
+
 .ad1{background-image:url("home_ad1.png")}
 .ad2{background-image:url("home_ad2.png")}
 
 .dots{
- text-align:center;height:7px;line-height:5px;
- font-size:8px;color:#b7c1ce
+height:7px;
+text-align:center;
+line-height:5px;
+font-size:8px;
+color:#b7c1ce
 }
+
 .dots b{color:#315de8}
 
 /* WELCOME */
 .welcome{
- height:72px;flex:0 0 72px;border:0;border-radius:17px;
- background:url("home_welcome.png") center/cover no-repeat;
- box-shadow:0 5px 15px #24508014
+height:72px;
+border-radius:17px;
+background:url("home_welcome.png") center/cover no-repeat;
+box-shadow:0 5px 15px #24508014;
+margin:6px 0 8px;
+display:flex;
+align-items:center;
+padding:10px 14px;
+color:#fff
+}
+
+.welcome-text b{
+font-size:18px;
+display:block
+}
+
+.welcome-text span{
+font-size:12px;
+opacity:.92
+}
+
+/* SECTION */
+.section{
+margin:9px 0
+}
+
+.section-head{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:6px
+}
+
+.section-title{
+font-size:17px;
+font-weight:900
+}
+
+.see-all{
+font-size:12px;
+font-weight:800;
+color:#1956ed;
+background:#eaf0ff;
+padding:7px 10px;
+border-radius:10px
 }
 
 /* BREAKING */
-.news{
- height:39px;flex:0 0 39px;border:1px solid #e1e8f0;
- border-radius:13px;background:#fff
+.breaking{
+height:39px;
+display:flex;
+align-items:center;
+gap:8px;
+padding:0 10px;
+border:1px solid #e1e8f0;
+border-radius:13px;
+background:#fff;
+overflow:hidden
+}
+
+.breaking-label{
+flex:0 0 auto;
+background:#ef3340;
+color:#fff;
+font-size:11px;
+font-weight:900;
+padding:6px 8px;
+border-radius:8px
+}
+
+.breaking-text{
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+font-size:12px
+}
+
+/* LIVE */
+.live-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:7px
+}
+
+.live-card{
+height:112px;
+border-radius:14px;
+overflow:hidden;
+position:relative;
+background:#17212b;
+color:#fff;
+box-shadow:0 4px 12px #00000015;
+cursor:pointer
+}
+
+.live-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.76
+}
+
+.live-info{
+position:absolute;
+left:6px;
+right:6px;
+bottom:6px
+}
+
+.live-badge{
+display:inline-block;
+background:#ef3340;
+font-size:9px;
+font-weight:900;
+padding:3px 6px;
+border-radius:6px;
+margin-bottom:3px
+}
+
+.live-name{
+font-size:10px;
+font-weight:800;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis
+}
+
+.go-live{
+margin-top:7px;
+width:100%;
+height:35px;
+border-radius:11px;
+background:linear-gradient(90deg,#1956ed,#8b35ff);
+color:#fff;
+font-size:13px;
+font-weight:900
+}
+
+/* STORE */
+.store-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px
+}
+
+.store-item{
+height:70px;
+border-radius:13px;
+background:#fff;
+border:1px solid #e4eaf1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:3px;
+box-shadow:0 3px 9px #26384d0c
+}
+
+.store-icon{
+font-size:23px
+}
+
+.store-item span{
+font-size:10px;
+font-weight:800
+}
+
+/* QUICK */
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:7px
+}
+
+.quick{
+height:62px;
+border-radius:13px;
+background:#fff;
+border:1px solid #e4eaf1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:3px
+}
+
+.quick b{
+font-size:20px
+}
+
+.quick span{
+font-size:9px;
+font-weight:800
+}
+
+/* VIDEO */
+.video-card{
+height:150px;
+border-radius:16px;
+overflow:hidden;
+position:relative;
+background:linear-gradient(135deg,#111827,#25364a);
+color:#fff;
+cursor:pointer
+}
+
+.video-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.75
+}
+
+.video-overlay{
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.play{
+width:48px;
+height:48px;
+border-radius:50%;
+background:#ffffffdd;
+color:#1956ed;
+display:grid;
+place-items:center;
+font-size:20px
+}
+
+.video-title{
+position:absolute;
+left:10px;
+right:10px;
+bottom:9px;
+font-size:13px;
+font-weight:900
+}
+
+/* BOTTOM */
+.bottom{
+position:fixed;
+left:50%;
+bottom:0;
+transform:translateX(-50%);
+width:100%;
+max-width:520px;
+height:66px;
+background:#fff;
+border-top:1px solid #e2e8f0;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+padding:5px 5px 7px;
+z-index:20
+}
+
+.nav{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:2px;
+background:transparent;
+color:#718096;
+font-size:10px;
+font-weight:700;
+border-radius:12px
+}
+
+.nav b{
+font-size:21px
+}
+
+.nav.active{
+color:#1956ed;
+background:#eef3ff
+}
+
+/* MODAL */
+.modal{
+position:fixed;
+inset:0;
+background:#071019cc;
+z-index:50;
+display:none;
+align-items:flex-end;
+justify-content:center
+}
+
+.modal.show{display:flex}
+
+.sheet{
+width:100%;
+max-width:520px;
+background:#fff;
+border-radius:22px 22px 0 0;
+padding:14px;
+max-height:82vh;
+overflow:auto
+}
+
+.sheet-head{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:12px
+}
+
+.sheet-title{
+font-size:19px;
+font-weight:950
+}
+
+.close{
+width:36px;
+height:36px;
+border-radius:50%;
+background:#eef2f7;
+font-size:18px
+}
+
+.modal-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px
+}
+
+.modal-item{
+min-height:75px;
+border:1px solid #e3e9f0;
+border-radius:14px;
+background:#f8fafc;
+padding:10px
+}
+
+.modal-item b{
+display:block;
+font-size:15px;
+margin-bottom:3px
+}
+
+.modal-item span{
+font-size:11px;
+color:#718096
+}
+
+/* RESPONSIVE */
+@media(max-width:360px){
+.live-card{height:100px}
+.store-item{height:64px}
+.quick{height:58px}
+.brand-name{font-size:19px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+<div class="brand">
+<div class="logo">PR</div>
+<div class="brand-name">PRIYO APP</div>
+</div>
+
+<div class="header-actions">
+<button class="hbtn" onclick="searchApp()">⌕</button>
+<button class="hbtn" onclick="openMore()">☰</button>
+</div>
+</header>
+
+<main>
+
+<!-- ADS -->
+<div class="ads">
+<div class="ad ad1"></div>
+<div class="ad ad2"></div>
+</div>
+
+<div class="dots"><b>●</b> ○ ○</div>
+
+<!-- WELCOME -->
+<div class="welcome">
+<div class="welcome-text">
+<b>স্বাগতম PRIYO APP-এ</b>
+<span>এক জায়গায় আপনার প্রয়োজনীয় সবকিছু</span>
+</div>
+</div>
+
+<!-- BREAKING -->
+<div class="section">
+<div class="section-head">
+<div class="section-title">Breaking News</div>
+</div>
+
+<div class="breaking">
+<div class="breaking-label">BREAKING</div>
+<div class="breaking-text" id="breakingText">
+PRIYO APP-এর নতুন আপডেট ও সেবা এখন এক জায়গায়।
+</div>
+</div>
+</div>
+
+<!-- LIVE -->
+<div class="section">
+<div class="section-head">
+<div class="section-title">🔴 লাইভ এখন চলছে</div>
+<button class="see-all" onclick="openLive()">সব দেখুন</button>
+</div>
+
+<div class="live-grid">
+
+<div class="live-card" onclick="openLiveCard(1)">
+<img src="live_card_1.png" alt="Live">
+<div class="live-info">
+<div class="live-badge">LIVE</div>
+<div class="live-name">PRIYO LIVE</div>
+</div>
+</div>
+
+<div class="live-card" onclick="openLiveCard(2)">
+<img src="live_card_2.png" alt="Live">
+<div class="live-info">
+<div class="live-badge">LIVE</div>
+<div class="live-name">Live News</div>
+</div>
+</div>
+
+<div class="live-card" onclick="openLiveCard(3)">
+<img src="live_card_3.png" alt="Live">
+<div class="live-info">
+<div class="live-badge">LIVE</div>
+<div class="live-name">Live Show</div>
+</div>
+</div>
+
+<div class="live-card" onclick="openLiveCard(4)">
+<img src="live_card_4.png" alt="Live">
+<div class="live-info">
+<div class="live-badge">LIVE</div>
+<div class="live-name">PRIYO TV</div>
+</div>
+</div>
+
+</div>
+
+<button class="go-live" onclick="goLive()">🔴 Go Live</button>
+</div>
+
+<!-- STORE -->
+<div class="section">
+<div class="section-head">
+<div class="section-title">🛍️ Store</div>
+<button class="see-all" onclick="openStore()">সব দেখুন</button>
+</div>
+
+<div class="store-grid">
+
+<button class="store-item" onclick="storeAction('Products')">
+<div class="store-icon">🛒</div>
+<span>Products</span>
+</button>
+
+<button class="store-item" onclick="storeAction('Offers')">
+<div class="store-icon">🏷️</div>
+<span>Offers</span>
+</button>
+
+<button class="store-item" onclick="storeAction('Orders')">
+<div class="store-icon">📦</div>
+<span>Orders</span>
+</button>
+
+<button class="store-item" onclick="storeAction('Cart')">
+<div class="store-icon">🛍️</div>
+<span>Cart</span>
+</button>
+
+<button class="store-item" onclick="storeAction('Payment')">
+<div class="store-icon">💳</div>
+<span>Payment</span>
+</button>
+
+<button class="store-item" onclick="storeAction('More')">
+<div class="store-icon">➕</div>
+<span>More</span>
+</button>
+
+</div>
+</div>
+
+<!-- QUICK -->
+<div class="section">
+<div class="section-head">
+<div class="section-title">⚡ Quick Access</div>
+</div>
+
+<div class="quick-grid">
+
+<button class="quick" onclick="quick('Photo')">
+<b>📷</b><span>Photo</span>
+</button>
+
+<button class="quick" onclick="quick('Video')">
+<b>🎬</b><span>Video</span>
+</button>
+
+<button class="quick" onclick="quick('Music')">
+<b>🎵</b><span>Music</span>
+</button>
+
+<button class="quick" onclick="quick('Chat')">
+<b>💬</b><span>Chat</span>
+</button>
+
+</div>
+</div>
+
+<!-- VIDEO -->
+<div class="section">
+<div class="section-head">
+<div class="section-title">🎬 Featured Video</div>
+<button class="see-all" onclick="openVideo()">দেখুন</button>
+</div>
+
+<div class="video-card" onclick="openVideo()">
+<img src="home_welcome.png" alt="PRIYO Video">
+<div class="video-overlay">
+<div class="play">▶</div>
+</div>
+<div class="video-title">PRIYO APP — Featured Video</div>
+</div>
+</div>
+
+</main>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom">
+
+<button class="nav active" onclick="navHome(this)">
+<b>⌂</b>
+<span>Home</span>
+</button>
+
+<button class="nav" onclick="quick('Live')">
+<b>🔴</b>
+<span>Live</span>
+</button>
+
+<button class="nav" onclick="quick('Store')">
+<b>🛍️</b>
+<span>Store</span>
+</button>
+
+<button class="nav" onclick="quick('Messages')">
+<b>💬</b>
+<span>Chat</span>
+</button>
+
+<button class="nav" onclick="quick('Profile')">
+<b>👤</b>
+<span>Profile</span>
+</button>
+
+</nav>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal(event)">
+<div class="sheet" onclick="event.stopPropagation()">
+
+<div class="sheet-head">
+<div class="sheet-title" id="modalTitle">PRIYO APP</div>
+<button class="close" onclick="closeModal()">✕</button>
+</div>
+
+<div class="modal-grid" id="modalContent"></div>
+
+</div>
+</div>
+
+<script>
+
+const modal=document.getElementById("modal");
+const modalTitle=document.getElementById("modalTitle");
+const modalContent=document.getElementById("modalContent");
+
+function showModal(title,items){
+modalTitle.textContent=title;
+modalContent.innerHTML=items.map(x=>`
+<div class="modal-item" onclick="itemClick('${x[0]}')">
+<b>${x[1]}</b>
+<span>${x[2]}</span>
+</div>
+`).join("");
+modal.classList.add("show");
+}
+
+function closeModal(e){
+if(!e || e.target===modal){
+modal.classList.remove("show");
+}
+}
+
+function openLive(){
+showModal("🔴 PRIYO LIVE",[
+["live1","🔴 Live Now","বর্তমানে চলমান লাইভ"],
+["live2","📺 Live News","সরাসরি সংবাদ"],
+["live3","🎥 Live Show","সরাসরি অনুষ্ঠান"],
+["live4","🎙️ Go Live","নিজে লাইভ শুরু করুন"]
+]);
+}
+
+function openLiveCard(n){
+showModal("🔴 Live",[
+["play","▶ Play Live","লাইভ ভিডিও চালু করুন"],
+["like","♡ Like","লাইভে লাইক দিন"],
+["share","↗ Share","বন্ধুদের সাথে শেয়ার করুন"],
+["comment","💬 Comment","কমেন্ট করুন"]
+]);
+}
+
+function goLive(){
+showModal("🔴 Go Live",[
+["camera","📹 Camera Live","ক্যামেরা দিয়ে লাইভ"],
+["screen","📱 Screen Live","স্ক্রিন শেয়ার করে লাইভ"],
+["schedule","⏰ Schedule","পরবর্তী লাইভ নির্ধারণ"]
+]);
+}
+
+function openStore(){
+showModal("🛍️ PRIYO STORE",[
+["products","🛒 Products","সব পণ্য দেখুন"],
+["offers","🏷️ Offers","বিশেষ অফার"],
+["orders","📦 Orders","আপনার অর্ডার"],
+["cart","🛍️ Cart","কার্ট দেখুন"],
+["payment","💳 Payment","পেমেন্ট অপশন"],
+["more","➕ More","আরও সেবা"]
+]);
+}
+
+function storeAction(name){
+showModal("🛍️ "+name,[
+["open","➡️ Open","এই সেকশনটি খুলুন"],
+["back","← Back","হোমে ফিরে যান"]
+]);
+}
+
+function openVideo(){
+showModal("🎬 Featured Video",[
+["play","▶ Play Video","ভিডিও চালু করুন"],
+["like","♡ Like","ভিডিওতে লাইক দিন"],
+["save","☆ Save","পরে দেখার জন্য রাখুন"],
+["share","↗ Share","ভিডিও শেয়ার করুন"]
+]);
+}
+
+function openMore(){
+showModal("☰ PRIYO APP",[
+["profile","👤 Profile","আপনার প্রোফাইল"],
+["photo","📷 Photo","ছবি"],
+["video","🎬 Video","ভিডিও"],
+["music","🎵 Music","মিউজিক"],
+["chat","💬 Chat","চ্যাট"],
+["social","🌐 Social","সোশ্যাল মিডিয়া"],
+["settings","⚙️ Settings","সেটিংস"]
+]);
+}
+
+function searchApp(){
+showModal("🔎 Search",[
+["search","🔎 Search PRIYO APP","সার্চ করার সুবিধা শিগগিরই যুক্ত হবে"]
+]);
+}
+
+function quick(name){
+showModal(name,[
+["open","➡️ "+name,"এই সেকশনটি নির্বাচিত হয়েছে"],
+["info","ℹ️ PRIYO APP","ফিচারটি পরবর্তী ধাপে সম্পূর্ণ করা যাবে"]
+]);
+}
+
+function navHome(btn){
+document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));
+btn.classList.add("active");
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function itemClick(name){
+console.log("Selected:",name);
+}
+
+</script>
+
+</body>
+</html>
